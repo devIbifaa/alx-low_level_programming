@@ -1,8 +1,11 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
- * Main : Write a C program that prints exactly with proper grammar,with the function printf
- *Return : 0(Success)
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-printf
+  printf("with proper grammar, but the outcome is a piece of art,\n");
+  return (0);
+}
