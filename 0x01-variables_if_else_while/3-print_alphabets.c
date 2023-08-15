@@ -6,7 +6,7 @@
 int main(void)
 {
 char let  = 'a';
- char upLetters = 'A';
+char upLetters = 'A';
 while (let <= 'z')
 {
 putchar(let);
