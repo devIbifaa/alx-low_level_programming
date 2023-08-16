@@ -1,0 +1,10 @@
+#includee <stdio.h>
+/**
+ * Main - Program that will print _putch
+ *Return: Return (0) Success
+ */
+int main(void)
+{
+printf("_putchar \n");
+return (0);
+}
