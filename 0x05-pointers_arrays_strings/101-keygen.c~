@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function to generate a random character from a given character set
+char getRandomChar(const char* charSet, int charSetLength) {
+    int randomIndex = rand() % charSetLength;
+    return charSet[randomIndex];
+}
+
+int main() {
+    // Character sets for uppercase letters, lowercase letters, and digits
+    const char uppercaseLetters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const char lowercaseLetters[] = "abcdefghijklmnopqrstuvwxyz";
+    const char digits[] = "0123456789";
+
+    // Combined character set
+    const char* charSets[] = {uppercaseLetters, lowercaseLetters, digits};
+    int numCharSets = sizeof(charSets) / sizeof(charSets[0]);
+
+    // Seed the random number generator with the current time
+    srand((unsigned int)time(NULL));
+
+    // Password length (adjust as needed)
+    int passwordLength = 12;
+
+    // Generate the password
+    char password[passwordLength + 1]; // +1 for the null terminator
+    for (int i = 0; i < passwordLength; i++) {
+        int randomCharSetIndex = rand() % numCharSets;
+        password[i] = getRandomChar(charSets[randomCharSetIndex], strlen(charSets[randomCharSetIndex]));
+    }
+    password[passwordLength] = '\0'; // Null-terminate the password
+
+    // Print the generated password
+    printf("Generated Password: %s\n", password);
+
+    return 0;
+}
