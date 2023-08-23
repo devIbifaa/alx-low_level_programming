@@ -21,8 +21,8 @@ start = (length - 1) / 2;
 
 for (; str[start] != '\0'; start++)
 {
-putchar(str[start]);
+_putchar(str[start]);
 }
 
-putchar('\n');
+_putchar('\n');
 }
