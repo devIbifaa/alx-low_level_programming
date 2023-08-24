@@ -11,23 +11,16 @@ char *leet(char *str)
 {
 int i;
 int j;
-if (str == NULL)
-{
-return (NULL);
-}
+char s1[] = "aAeEoOtTlL";
+char s2[] = "4433007711";
 
 for (i = 0; str[i] != '\0'; i++)
 {
-char c = str[i];
-const char *leetChars = "aeotlAEOTL";
-const char *leetReplacements = "430711430711";
-
-for (j = 0; leetChars[j] != '\0'; j++)
+for (j = 0; j < 10; j++)
 {
-if (c == leetChars[j])
+if (str[i] == s1[i])
 {
-str[i] = leetReplacements[j];
-break;
+str[i] = s2[j];
 }
 }
 }
