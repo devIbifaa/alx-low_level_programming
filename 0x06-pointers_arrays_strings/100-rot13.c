@@ -10,28 +10,20 @@
 char *rot13(char *str)
 {
 int i;
-if (str == NULL)
-{
-
-return (NULL);
-}
+int j;
+char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char scataData[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyxabcdefghijklm";
 
 for (i = 0; str[i] != '\0'; i++)
 {
-char c = str[i];
-
-if (c >= 'A' && c <= 'Z')
+for (j = 0; j < 52; j++)
 {
-
-str[i] = ((c - 'A' + 13) % 26) + 'A';
-}
-
-else if (c >= 'a' && c <= 'z')
+if(str[i] == data1[j])
 {
-
-str[i] = ((c - 'a' + 13) % 26) + 'a';
+str[i] = scataData[j];
+break;
 }
-
+}
 }
 
 return (str);
